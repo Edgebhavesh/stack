@@ -1,0 +1,72 @@
+class CustomStack{
+    protected int arr[];
+    private static int  defaultsize=10;
+
+    int top=-1;
+    public CustomStack() {
+        this(defaultsize);
+    }
+    public CustomStack(int val) {
+        this.arr=new int[val];
+    }
+
+    public boolean push(int data) {
+        if(isfull())
+        {
+            System.out.println("Stack is full");
+            return false;
+        }
+        else
+        {
+            arr[++top]=data;
+            return true;
+        }
+    }
+
+    private boolean isfull(){
+        if(top==arr.length-1)
+         return true;
+         return false;
+    }
+
+    public int pop()
+    {
+        if(isempty())
+        {
+            System.out.println("Stack is empty");
+            return 0;
+        }
+        return arr[top--];
+    }
+    
+    public int peek(){
+        if(isempty())
+        {
+            System.out.println("No item in array");
+            return -1;
+        }
+        return arr[top];
+    }
+
+    private boolean isempty() {
+        if(top==-1)
+         return true;
+
+        return false;
+    }
+
+}
+class Main{
+public static void main(String args[]) {
+    CustomStack st=new CustomStack(5);
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(1);
+    
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+        System.out.println(st.pop());
+}
+}
