@@ -1,0 +1,8 @@
+push()
+pop()
+isempty()
+search()
+{
+It determines whether an object exists in the stack. If the element is found,
+It returns the position of the element from the top of the stack. Else, it returns -1.
+}
